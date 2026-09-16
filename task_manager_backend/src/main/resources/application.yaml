@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: task-manager-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:taskmanager}?useSSL=false&serverTimezone=UTC
+    username: ${MYSQL_USER:taskmanager_user}
+    password: ${MYSQL_PASSWORD:taskmanager_pass}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:changeThisSecretInProductionMinimum256BitsLongForHS256Algorithm}
+    expiration-ms: 86400000
