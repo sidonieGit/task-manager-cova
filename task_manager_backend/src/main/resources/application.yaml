@@ -3,7 +3,7 @@ spring:
     name: task-manager-backend
 
   datasource:
-    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:taskmanager}?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE:taskmanager}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: ${MYSQL_USER:taskmanager_user}
     password: ${MYSQL_PASSWORD:taskmanager_pass}
 
