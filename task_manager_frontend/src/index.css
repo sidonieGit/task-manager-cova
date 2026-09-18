@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-cova-teal: #0b4f5c;
+  --color-cova-teal-dark: #073844;
+  --color-cova-orange: #f5793a;
+  --color-cova-orange-dark: #d9601f;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}

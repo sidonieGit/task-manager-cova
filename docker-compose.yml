@@ -18,5 +18,18 @@ services:
       timeout: 5s
       retries: 10
 
+  frontend:
+    build:
+      context: ./task_manager_frontend
+      dockerfile: Dockerfile
+    container_name: taskmanager-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./task_manager_frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
 volumes:
   mysql_data:
