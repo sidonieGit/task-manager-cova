@@ -6,8 +6,8 @@ Mini application de gestion de tâches avec authentification, développée dans 
 
 🚧 En cours de développement.
 
-- [ ] Backend Spring Boot (auth JWT + CRUD tâches)
-- [ ] Frontend React
+- [x] Backend Spring Boot (auth JWT + CRUD tâches)
+- [x] Frontend React
 - [ ] README complet avec architecture et captures d'écran
 
 ## Stack technique
