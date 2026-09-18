@@ -22,6 +22,6 @@ _À compléter une fois le backend et le frontend fonctionnels._
 
 ## Auteur
 
-Sidonie Djuissi Fohouo (Sifo)
-Développeuse Full Stack Java / Spring Boot / Angular
-LinkedIn : linkedin.com/in/sidonie-djuissi-fohouo
+- Sidonie Djuissi Fohouo
+- Développeuse Full Stack Java / Spring Boot
+- LinkedIn : linkedin.com/in/sidonie-djuissi-fohouo
