@@ -85,6 +85,13 @@ Le code est structuré en couches classiques :
    ./mvnw spring-boot:run
    ```
 
+   ou
+
+   ```bash
+   cd task_manager_backend
+   docker compose up -d
+   ```
+
 ### Accès
 
 - Frontend : http://localhost:5173
@@ -129,6 +136,10 @@ Erreur à l'inscription
 
 ![Erreur à l'inscription](./task_manager_frontend/docs/screenshots/err-inscription.PNG)
 
+Bouton afficher/masquer le mot de passe
+
+![Bouton afficher/masquer le mot de passe](./task_manager_frontend/docs/screenshots/inscription-toggle-oeil.PNG)
+
 Erreur : les mots de passe ne correspondent pas
 
 ![Erreur mots de passe différents](./task_manager_frontend/docs/screenshots/err-password-ne%20correspond-pas.PNG)
@@ -136,6 +147,10 @@ Erreur : les mots de passe ne correspondent pas
 Liste des tâches
 
 ![Liste des tâches](./task_manager_frontend/docs/screenshots/liste-taches.PNG)
+
+Filtrage des tâches par statut
+
+![Filtrage des tâches par statut](./task_manager_frontend/docs/screenshots/filtre-statut.PNG)
 
 Modification d'une tâche
 
@@ -179,10 +194,10 @@ Le cahier des charges incluait deux volets bonus : une version mobile en Flutter
 
 Pour la couche service, j'ai séparé les interfaces de leurs implémentations (`service` / `service/impl`). Ce n'est pas strictement nécessaire sur un projet de cette taille, mais ça facilite le mock dans les tests unitaires et ça garde une porte ouverte si le besoin de plusieurs implémentations se présente un jour.
 
-Côté conteneurisation, seul le frontend tourne dans Docker. Tailwind CSS v4 a besoin de Node 22, une version que je n'avais pas envie d'imposer en local, donc je l'ai isolée dans un conteneur. Le backend, lui, tourne nativement avec `./mvnw spring-boot:run` : ça reste plus simple et plus rapide pour itérer pendant le développement, sans les allers-retours de rebuild d'image à chaque changement. Seule MySQL, en plus du frontend, est conteneurisée pour éviter d'avoir à installer et configurer une instance locale.
+Côté conteneurisation, les trois services (MySQL, backend et frontend) tournent désormais dans des conteneurs Docker, orchestrés par le même `docker-compose.yml`. Au départ, j'ai isolé le frontend dans un conteneur parce que Tailwind CSS v4 a besoin de Node 22, une version que je n'avais pas envie d'imposer en local. J'ai ensuite conteneurisé le backend à son tour pour permettre un déploiement complet du projet, tout en gardant la possibilité de le lancer nativement avec `./mvnw spring-boot:run` pendant le développement local, ce qui reste plus rapide pour itérer sans les allers-retours de rebuild d'image à chaque changement.
 
 ## Auteur
 
-- Sidonie Djuissi Fohouo (Sifo)
+- Sidonie Djuissi Fohouo
 - Développeuse Full Stack Java / Spring Boot
 - LinkedIn : linkedin.com/in/sidonie-djuissi-fohouo
