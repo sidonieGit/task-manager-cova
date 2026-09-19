@@ -88,15 +88,24 @@ Le code est structuré en couches classiques :
    ou
 
    ```bash
-   cd task_manager_backend
    docker compose up -d
    ```
+
+   (depuis la racine du monorepo)
 
 ### Accès
 
 - Frontend : http://localhost:5173
 - Backend : http://localhost:8080
 - Documentation API interactive (Swagger) : http://localhost:8080/swagger-ui/index.html
+
+## Déploiement en ligne
+
+- Frontend déployé : https://taskmanagerfrontend-two.vercel.app
+- Backend déployé : https://task-manager-cova-production.up.railway.app
+- Documentation Swagger en ligne : https://task-manager-cova-production.up.railway.app/swagger-ui/index.html
+
+Ces liens permettent de tester l'application directement sans installation locale, et un compte de test existe (email `test@test.com`, mot de passe `password123!`).
 
 ## Endpoints API
 
